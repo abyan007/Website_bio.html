@@ -1,70 +1,717 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="scroll-smooth">
   <head>
-    <title>Tugas Buat Website</title>
-    <style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muh. Abyan | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-      .login-button {
-        font-size: 30px;
-        background-color: rgb(14, 230, 240);
-        color: white;
-        padding: 20px 40px;
-        border-radius: 40px;
-        margin-left: 70px; /* Kasih jarak dari teks */
-      }
-
-      .percobaan1 {
-        font-family: "Franklin Gothic Medium";
-        font-size: 80px;
-        width: 1350px;
-        margin: 60px auto;
-        color: rgb(14, 230, 240);
-      }
-
-      .percobaan2 {
-        font-family: "Times New Roman";
-        font-size: 60px;
-      }
-
-      .container {
-        display: flex; /* Ini yang bikin sejajar */
-        align-items: center; /* Tengahin vertikal */
-        justify-content: center; /* Tengahin horizontal */
-        margin-top: -15px;
-      }
-
-      body {
-        background-color: #121212;
-        color: #ffffff;
-      }
-
-      .bio-subtext {
-  font-size: 20px;
-  display: block;
-  margin-top: 10px;
-  color: #cccccc; /* opsional, agar lebih redup */
-}
-
-
-    </style>
+    <link rel="stylesheet" href="assets/styles.css" />
   </head>
-  <body>
-    
+  <body class="bg-light text-gray-800 dark:bg-dark dark:text-gray-100">
+    <!-- Header/Navigation -->
+    <header
+      class="fixed w-full z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-sm shadow-sm"
+    >
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a href="#home" class="text-2xl font-bold gradient-text">MA.</a>
 
-    <h1 class="percobaan1">Biografi</h1>
+          <div class="hidden md:flex space-x-8">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
 
-    <!-- BUNGKUS teks dan tombol -->
+          <div class="flex items-center space-x-4">
+            <div
+              class="relative inline-block w-12 mr-2 align-middle select-none"
+            >
+              <input
+                type="checkbox"
+                id="toggle"
+                class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer transition-transform duration-200 ease-in-out"
+              />
+              <label
+                for="toggle"
+                class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer transition-colors duration-200 ease-in-out"
+              ></label>
+            </div>
+            <button
+              id="mobile-menu-button"
+              class="md:hidden focus:outline-none"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
 
-    <div class="container">
-      <p class="percobaan2">
-        Biografi <br>
-        Muh. Abyan Athaillah Adnan <br>
-        <span class="bio-subtext">cari tahu tentang perjalanan biogarafi saya</span>
-      </p>
-      
-      <button class="login-button" onclick="window.location.href='biografi.html';">
-        <p>Mulai</p>
-      </button>
-    </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2">
+          <div class="flex flex-col space-y-3">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+      <div class="container mx-auto px-6 py-16 md:py-24">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-12 md:mb-0 animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+              Hi, I'm <span class="gradient-text">Muh. Abyan</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-6">
+              Frontend Developer
+            </h2>
+            <p class="text-lg mb-8 text-gray-600 dark:text-gray-300">
+              I build exceptional digital experiences with modern web
+              technologies. Focused on creating clean, efficient, and
+              user-friendly interfaces.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#projects"
+                class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
+                >View Work</a
+              >
+              <a
+                href="#contact"
+                class="px-6 py-3 border border-primary text-primary dark:text-white rounded-lg font-medium hover:bg-primary hover:text-white transition-colors"
+                >Contact Me</a
+              >
+            </div>
+          </div>
+          <div class="md:w-1/2 flex justify-center animate-float">
+            <div
+              class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary shadow-xl"
+            >
+              <img
+                src="https://abyan007.github.io/photo_abyan.png"
+                alt="Profile"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-16 animate-slide-up"
+        >
+          About <span class="gradient-text">Me</span>
+        </h2>
+
+        <div class="flex flex-col md:flex-row items-center">
+          <div
+            class="md:w-1/3 mb-8 md:mb-0 flex justify-center animate-slide-up"
+          >
+            <div
+              class="w-64 h-64 rounded-full overflow-hidden border-4 border-primary shadow-lg"
+            >
+              <img
+                src="https://abyan007.github.io/photo_abyan.png"
+                alt="About"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div class="md:w-2/3 md:pl-12 animate-slide-up">
+            <h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
+            <p class="text-lg mb-6 text-gray-600 dark:text-gray-300">
+              I'm a passionate frontend developer with 5 years of experience
+              creating modern web applications. I specialize in React, Vue.js,
+              and responsive design principles to build intuitive user
+              interfaces.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div>
+                <h4 class="font-medium mb-2">
+                  Name:
+                  <span class="text-gray-600 dark:text-gray-300"
+                    >Muh. Abyan</span
+                  >
+                </h4>
+                <h4 class="font-medium mb-2">
+                  Email:
+                  <span class="text-gray-600 dark:text-gray-300"
+                    >abyan@gmail.com</span
+                  >
+                </h4>
+              </div>
+              <div>
+                <h4 class="font-medium mb-2">
+                  Experience:
+                  <span class="text-gray-600 dark:text-gray-300">5+ Years</span>
+                </h4>
+                <h4 class="font-medium mb-2">
+                  Location:
+                  <span class="text-gray-600 dark:text-gray-300"
+                    >Indonesia, Makassar</span
+                  >
+                </h4>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="#"
+                class="px-4 py-2 bg-primary text-white rounded-lg flex items-center"
+              >
+                <i class="fas fa-download mr-2"></i> Download CV
+              </a>
+              <a
+                href="#"
+                class="px-4 py-2 border border-primary text-primary dark:text-white rounded-lg flex items-center hover:bg-primary hover:text-white transition-colors"
+              >
+                <i class="fab fa-github mr-2"></i> GitHub
+              </a>
+              <a
+                href="#"
+                class="px-4 py-2 border border-primary text-primary dark:text-white rounded-lg flex items-center hover:bg-primary hover:text-white transition-colors"
+              >
+                <i class="fab fa-linkedin mr-2"></i> LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-4 animate-slide-up"
+        >
+          My <span class="gradient-text">Projects</span>
+        </h2>
+        <p
+          class="text-center text-gray-600 dark:text-gray-300 mb-16 max-w-2xl mx-auto animate-slide-up"
+        >
+          Here are some of my recent projects. Each one was carefully crafted to
+          solve specific problems and deliver exceptional user experiences.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-all duration-300 animate-slide-up"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="data:image/jpeg;base64,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"
+                alt="Project 1"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                A full-featured online store with cart functionality, product
+                filtering, and secure checkout.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded"
+                  >React</span
+                >
+                <span
+                  class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded"
+                  >Node.js</span
+                >
+                <span
+                  class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded"
+                  >MongoDB</span
+                >
+              </div>
+              <div class="flex space-x-3">
+                <a href="#" class="text-primary hover:underline">Live Demo</a>
+                <a
+                  href="#"
+                  class="text-gray-600 dark:text-gray-300 hover:underline"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-all duration-300 animate-slide-up"
+            style="animation-delay: 0.2s"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="data:image/jpeg;base64,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"
+                alt="Project 2"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Task Management App</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                A productivity application for organizing tasks with
+                drag-and-drop functionality and team collaboration.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded"
+                  >Vue.js</span
+                >
+                <span
+                  class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded"
+                  >Firebase</span
+                >
+                <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded"
+                  >Tailwind CSS</span
+                >
+              </div>
+              <div class="flex space-x-3">
+                <a href="#" class="text-primary hover:underline">Live Demo</a>
+                <a
+                  href="#"
+                  class="text-gray-600 dark:text-gray-300 hover:underline"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-all duration-300 animate-slide-up"
+            style="animation-delay: 0.4s"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                alt="Project 3"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Health Dashboard</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                A data visualization platform for health metrics with
+                interactive charts and personalized insights.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded"
+                  >React</span
+                >
+                <span
+                  class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded"
+                  >D3.js</span
+                >
+                <span
+                  class="px-2 py-1 bg-indigo-100 text-indigo-800 text-xs rounded"
+                  >TypeScript</span
+                >
+              </div>
+              <div class="flex space-x-3">
+                <a href="#" class="text-primary hover:underline">Live Demo</a>
+                <a
+                  href="#"
+                  class="text-gray-600 dark:text-gray-300 hover:underline"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="text-center mt-12 animate-slide-up"
+          style="animation-delay: 0.6s"
+        >
+          <a
+            href="#"
+            class="px-6 py-3 border border-primary text-primary dark:text-white rounded-lg font-medium hover:bg-primary hover:text-white transition-colors"
+            >View All Projects</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-4 animate-slide-up"
+        >
+          My <span class="gradient-text">Skills</span>
+        </h2>
+        <p
+          class="text-center text-gray-600 dark:text-gray-300 mb-16 max-w-2xl mx-auto animate-slide-up"
+        >
+          I've worked with a variety of technologies in the web development
+          world. Here are my core competencies.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div class="animate-slide-up">
+            <h3 class="text-xl font-semibold mb-6">Technical Skills</h3>
+
+            <div class="space-y-6">
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>HTML/CSS</span>
+                  <span>95%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 95%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>JavaScript</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>React</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>Vue.js</span>
+                  <span>80%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="animate-slide-up" style="animation-delay: 0.2s">
+            <h3 class="text-xl font-semibold mb-6">Professional Skills</h3>
+
+            <div class="space-y-6">
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>UI/UX Design</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>Problem Solving</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>Team Collaboration</span>
+                  <span>88%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 88%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>Communication</span>
+                  <span>92%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 92%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 animate-slide-up"
+          style="animation-delay: 0.4s"
+        >
+          <div
+            class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm"
+          >
+            <i class="fab fa-html5 text-4xl text-orange-500 mb-2"></i>
+            <span>HTML5</span>
+          </div>
+          <div
+            class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm"
+          >
+            <i class="fab fa-css3-alt text-4xl text-blue-500 mb-2"></i>
+            <span>CSS3</span>
+          </div>
+          <div
+            class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm"
+          >
+            <i class="fab fa-js text-4xl text-yellow-500 mb-2"></i>
+            <span>JavaScript</span>
+          </div>
+          <div
+            class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm"
+          >
+            <i class="fab fa-react text-4xl text-blue-400 mb-2"></i>
+            <span>React</span>
+          </div>
+          <div
+            class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm"
+          >
+            <i class="fab fa-vuejs text-4xl text-green-500 mb-2"></i>
+            <span>Vue.js</span>
+          </div>
+          <div
+            class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm"
+          >
+            <i class="fab fa-node-js text-4xl text-green-600 mb-2"></i>
+            <span>Node.js</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-4 animate-slide-up"
+        >
+          Get In <span class="gradient-text">Touch</span>
+        </h2>
+        <p
+          class="text-center text-gray-600 dark:text-gray-300 mb-16 max-w-2xl mx-auto animate-slide-up"
+        >
+          Have a project in mind or want to discuss potential opportunities?
+          Feel free to reach out!
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-12">
+          <div class="md:w-1/2 animate-slide-up">
+            <form class="space-y-6">
+              <div>
+                <label for="name" class="block mb-2 font-medium"
+                  >Your Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block mb-2 font-medium"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+              </div>
+
+              <div>
+                <label for="subject" class="block mb-2 font-medium"
+                  >Subject</label
+                >
+                <input
+                  type="text"
+                  id="subject"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+              </div>
+
+              <div>
+                <label for="message" class="block mb-2 font-medium"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-blue-700 transition-colors w-full"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <div class="md:w-1/2 animate-slide-up" style="animation-delay: 0.2s">
+            <div
+              class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-lg h-full"
+            >
+              <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <div
+                    class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4"
+                  >
+                    <i class="fas fa-map-marker-alt text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium">Location</h4>
+                    <p class="text-gray-600 dark:text-gray-300">
+                      Indonesia, Makassar
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div
+                    class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4"
+                  >
+                    <i class="fas fa-envelope text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium">Email</h4>
+                    <p class="text-gray-600 dark:text-gray-300">
+                      abyan@gmail.com
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div
+                    class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4"
+                  >
+                    <i class="fas fa-phone text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium">Phone</h4>
+                    <p class="text-gray-600 dark:text-gray-300">
+                      +62 (123) 987-6543
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div
+                    class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4"
+                  >
+                    <i class="fas fa-clock text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium">Working Hours</h4>
+                    <p class="text-gray-600 dark:text-gray-300">
+                      All Day: 07:30 - 16:30
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <h4 class="font-medium mb-4">Follow Me</h4>
+                <div class="flex space-x-4">
+                  <a
+                    href="#"
+                    class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-600 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                  >
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-600 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-600 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-600 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                  >
+                    <i class="fab fa-dribbble"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <a href="#home" class="text-2xl font-bold gradient-text">MA.</a>
+            <p class="mt-2">Creating digital experiences that matter.</p>
+          </div>
+
+          <div class="flex space-x-6">
+            <a href="#home" class="hover:text-white transition-colors">Home</a>
+            <a href="#about" class="hover:text-white transition-colors"
+              >About</a
+            >
+            <a href="#projects" class="hover:text-white transition-colors"
+              >Projects</a
+            >
+            <a href="#contact" class="hover:text-white transition-colors"
+              >Contact</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p>© 2023 Muh. Abyan. All rights reserved.</p>
+          <div class="mt-4 md:mt-0">
+            <a href="#" class="text-sm hover:underline">Privacy Policy</a>
+            <span class="mx-2">•</span>
+            <a href="#" class="text-sm hover:underline">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/script.js"></script>
   </body>
 </html>
